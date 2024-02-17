@@ -9,20 +9,33 @@
     <title>React CDN</title>
 </head>
 <body>
-    <div class="root"></div>
-
+    <div id="root"></div>
+    <i class="fa-brands fa-telegram"></i>
 
     <script type="text/babel">
         const App = () => {
+            const title = "Welcome tu My website"
+            const subtitle = "This is a website to learning react"
+            const address = "https://github.com/Xebbi"
+            const handleClick = () => {
+                console.log("You clicked me 😎")
+                console.log("This is title of my website:", title)
+            }
             return (
-                <div>
-                     <h1>My first React Component</h1>      
-               </div>
-            )
+                <div className="app">
+                    <h1>{title.toUpperCase()}</h1>
+                    <h3>{subtitle}</h3>
+                    <p>Tiday's date is: {new Date().toDateString()}</p>
+                    <p>Random number: {Math.floor(Math.random() * 100) + 1}</p>
+                     <a href={address}>My github account</a>
+                     <button onClick={handleClick}>Click me</button>
+                </div>
+            );
         };
-
-        const main = ReactDOM.createRoot(document.getElementById("root"))
-        main.render(<App/>)
+    
+        const main = ReactDOM.createRoot(document.getElementById("root"));
+        main.render(<App />);
     </script>
+    
 </body>
 </html>
